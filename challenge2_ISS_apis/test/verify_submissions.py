@@ -4,7 +4,7 @@ from pathlib import Path
 import requests
 
 challenge_dir = Path(os.path.dirname(__file__)).parent
-solution_file = challenge_dir / "solutions/iss.py"
+solution_file = challenge_dir / "solutions/speed.py"
 assert solution_file.exists(), "No solution file found"
 
 if __name__ == "__main__":
