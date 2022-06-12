@@ -9,6 +9,11 @@ assert solution_file.exists(), "No solution file found"
 
 if __name__ == "__main__":
     from challenge2_ISS_apis.solutions.iss import calculate_speed
+
     calculated_speed = calculate_speed()
-    real_speed = requests.get("https://api.wheretheiss.at/v1/satellites/25544").json()["velocity"]
-    assert real_speed * 0.9 < calculated_speed < real_speed * 1.1, f"incorrect speed: {calculated_speed}"
+    real_speed = requests.get("https://api.wheretheiss.at/v1/satellites/25544").json()[
+        "velocity"
+    ]
+    assert (
+        real_speed * 0.9 < calculated_speed < real_speed * 1.1
+    ), f"incorrect speed: {calculated_speed}"
