@@ -29,16 +29,16 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test challenge 1
       run: |
-        python challenge1_brute_forcing/test/verify_submission.py
+        python challenge1_brute_forcing/test/verify_submissions.py
     - name: Test challenge 2
       run: |
-        python challenge2_ISS_apis/test/verify_submission.py
+        python challenge2_ISS_apis/test/verify_submissions.py
     - name: Test challenge 3
       run: |
-        python challenge3_RPi_sensors/test/verify_submission.py
+        python challenge3_RPi_sensors/test/verify_submissions.py
     - name: Test challenge 4
       run: |
-        python challenge4_twilio/test/verify_submission.py
+        python challenge4_twilio/test/verify_submissions.py
     - name: Test challenge 5
       run: |
-        python challenge5_performances/test/verify_submission.py
+        python challenge5_performances/test/verify_submissions.py
