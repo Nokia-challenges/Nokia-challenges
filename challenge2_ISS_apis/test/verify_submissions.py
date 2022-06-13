@@ -11,7 +11,9 @@ if __name__ == "__main__":
     from challenge2_ISS_apis.solution import run
 
     calculated_speed = run()
-    assert calculated_speed, "empty response from run method, are you returning anything?"
+    assert (
+        calculated_speed
+    ), "empty response from run method, are you returning anything?"
     real_speed = requests.get("https://api.wheretheiss.at/v1/satellites/25544").json()[
         "velocity"
     ]
