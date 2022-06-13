@@ -4,13 +4,13 @@ from pathlib import Path
 import requests
 
 challenge_dir = Path(os.path.dirname(__file__)).parent
-solution_file = challenge_dir / "solutions/speed.py"
+solution_file = challenge_dir / "solution.py"
 assert solution_file.exists(), "No solution file found"
 
 if __name__ == "__main__":
-    from challenge2_ISS_apis.solutions.iss import calculate_speed
+    from challenge2_ISS_apis.solution import run
 
-    calculated_speed = calculate_speed()
+    calculated_speed = run()
     real_speed = requests.get("https://api.wheretheiss.at/v1/satellites/25544").json()[
         "velocity"
     ]
