@@ -1,0 +1,9 @@
+CHALLENGE 2 - INTERNATIONAL SPACE STATION SPEED
+
+- lo scopo di questa challenge é scoprire la velocità della ISS con un margine di errore del 10%
+- per farlo si deve utilizzare la seguente API http://api.open-notify.org/iss-now.json che ritorna in tempo reale
+  la posizione della stazione spaziale (si solo la posizione e non non la velocità)
+- si può usare qualsiasi libreria python come "requests" per mandare richieste API o "geopy" per lavorare con le
+  coordinate.
+- la soluzione deve essere committata nella funzione run del file solution.py che trovate in questa directory e una
+  pull request deve essere aperta con questo cambiamento
