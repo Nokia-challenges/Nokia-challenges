@@ -1,0 +1,11 @@
+CHALLENGE 3 - Reverse engineering con Raspberry e sensori fisici
+
+Questa challenge mira a fare reverse engineering di un programma che gestisce sensori fisici tramite Raspberry Pi. L'obiettivo è capire il funzionamento 
+del software tramite il codice e verificare le condizioni fisiche richieste.
+
+- come nella challenge 1, lo scopo di questa challenge é inserire nel file passphrase.txt la password corretta
+- per superare la challenge il file passphrase.txt va committato e pushato e viene validato automaticamente
+- si può utilizzare la funzione di supporto check_password presente in utils.py per controllare se una password é
+  corretta, la funzione ritorna True o False
+- se la password é corretta la github action https://github.com/fedemic/Nokia-challenges/actions/workflows/validator.yml
+  diventa verde
