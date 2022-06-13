@@ -1,10 +1,6 @@
 name: Validator
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push, pull_request]
 
 permissions:
   contents: read
@@ -23,17 +19,22 @@ jobs:
         python -m pip install --upgrade pip setuptools wheel
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test challenge 1
+      if: always()
       run: |
         python challenge1_brute_forcing/test/verify_submissions.py
     - name: Test challenge 2
+      if: always()
       run: |
         python challenge2_ISS_apis/test/verify_submissions.py
     - name: Test challenge 3
+      if: always()
       run: |
         python challenge3_RPi_sensors/test/verify_submissions.py
     - name: Test challenge 4
+      if: always()
       run: |
         python challenge4_twilio/test/verify_submissions.py
     - name: Test challenge 5
+      if: always()
       run: |
         python challenge5_performances/test/verify_submissions.py
