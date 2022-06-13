@@ -1,3 +1,5 @@
+![Nokia Logo](https://www.nokia.com/sites/default/files/styles/scale_720_no_crop/public/2022-03/NOKIA_LOGO_RGB_HR.jpg)
+
 # Nokia-challenges
 Challenges for high school students during their days spent at Nokia offices
 
