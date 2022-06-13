@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 
+
 class Configuration:
     def __init__(self):
         GPIO.setwarnings(False)
@@ -13,7 +14,7 @@ class Configuration:
         self.GPIO_BLUE = 22
         self.GPIO_PIR = 25
         self.GPIO_BUZZER = 26
-        
+
         # pin configurations
         GPIO.setup(self.GPIO_ECHO, GPIO.IN)
         GPIO.setup(self.GPIO_TRIG, GPIO.OUT, initial=GPIO.LOW)

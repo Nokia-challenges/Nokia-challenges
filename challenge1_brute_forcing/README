@@ -1,0 +1,11 @@
+CHALLENGE 1 - BRUTE FORCING (O FORSE NO)
+
+- lo scopo di questa challenge é inserire nel file passphrase.txt la password corretta
+- la sola cosa conosciuta é l'hash della password
+- per superare la challenge il file passphrase.txt va committato e pushato e viene validato automaticamente
+- si può utilizzare la funzione di supporto check_password presente in utils.py per controllare se una password é
+  corretta, la funzione ritorna True o False
+- se la password é corretta la github action https://github.com/fedemic/Nokia-challenges/actions/workflows/validator.yml
+  diventa verde.
+- il bruteforcing é un'opzione, ma per finire prima di mai questo può servire
+  https://github.com/napolux/paroleitaliane/blob/master/paroleitaliane/660000_parole_italiane.txt

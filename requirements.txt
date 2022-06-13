@@ -1,0 +1,7 @@
+pytest
+requests
+geopy
+black
+flake8
+pandas
+openpyxl
