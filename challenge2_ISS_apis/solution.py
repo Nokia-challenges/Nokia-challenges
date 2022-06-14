@@ -1,4 +1,3 @@
-import geopy
 import requests
 import time
 
