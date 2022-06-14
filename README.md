@@ -10,3 +10,8 @@ Challenges for high school students during their days spent at Nokia offices
 - le soluzioni devono essere inviate attraverso una pull request, seguendo lo stile di contribuzione a un qualunque progetto open-source, e per tale ragione devono anche essere formattate usando https://github.com/psf/black
 - le pull request sono controllate sia automaticamente (formattazione e auto-verificatori della soluzione) che da esseri umani
 - lo scopo finale é far passare con successo tutti i 5 check, uno per challenge e arrivare a una run completa della "Continuous Integration" di questo progetto
+
+
+
+
+- davideperegoo
