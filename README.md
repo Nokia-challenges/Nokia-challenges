@@ -1,7 +1,7 @@
 ![Nokia Logo](https://www.nokia.com/sites/default/files/styles/scale_720_no_crop/public/2022-03/NOKIA_LOGO_RGB_HR.jpg)
 
 # Nokia-challenges
-Challenges for high school students during their days spent at Nokia offices
+Challenges per i ragazzi del Liceo Statale Banfi di Vimercate durante il progetto alternanza scuola-lavoro svolto presso gli uffici Nokia - Energy Park
 
 ### Istruzioni
 - può essere usato qualiasi editor, noi usiamo pycharm e visual studio code
