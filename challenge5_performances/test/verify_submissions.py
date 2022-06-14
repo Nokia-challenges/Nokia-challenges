@@ -21,4 +21,6 @@ if __name__ == "__main__":
 
     wb = load_workbook(filename=excel_file)
     assert wb.sheetnames == [league.name for league in leagues], "Incorrect sheet names"
-    assert all(sheet.max_row > 10 for sheet in wb.worksheets), "Missing data in excel file"
+    assert all(
+        sheet.max_row > 10 for sheet in wb.worksheets
+    ), "Missing data in excel file"
