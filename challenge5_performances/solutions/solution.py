@@ -1,8 +1,8 @@
-from standings import League
 from pathlib import Path
 from typing import List
 import timeit
 
+from challenge5_performances.solutions.standings import League
 
 leagues: List[League] = [
     League(id=4328, name="Premier League"),
@@ -29,7 +29,12 @@ leagues: List[League] = [
 
 path = Path.cwd() / "Standings.xlsx"
 
-if __name__ == "__main__":
+
+def run():
     start = timeit.default_timer()
     pass
     print(f"Execution time: {timeit.default_timer() - start}")
+
+
+if __name__ == "__main__":
+    run()
