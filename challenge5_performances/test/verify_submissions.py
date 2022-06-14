@@ -10,6 +10,7 @@ assert solution_file.exists(), "No solution file found"
 
 if __name__ == "__main__":
     from challenge5_performances.solutions.solution import run
+
     start = timeit.default_timer()
     run()
     exec_time = timeit.default_timer() - start
