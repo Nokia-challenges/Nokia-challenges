@@ -23,10 +23,10 @@ def run():
 
     pos1 = (lat1, lon1)
     pos2 = (lat2, lon2)
-    timediff=time2-time1
+    timediff = time2 - time1
 
     dist = great_circle(pos1, pos2).km * 1000
-    speed=(dist/timediff)*3.6
+    speed = (dist / timediff) * 3.6
 
     print(speed)
     return speed
