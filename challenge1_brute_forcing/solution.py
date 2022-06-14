@@ -8,16 +8,14 @@ def run():
     f2 = open("passphrase.txt", "w")
 
     for password in f.readlines():
-        
+
         password = password[:-1]
-#        print(password)
+        #        print(password)
 
         if check_password(password):
             f2.write(password)
-            return 0;
-
+            return 0
 
 
 if __name__ == "__main__":
     run()
-
