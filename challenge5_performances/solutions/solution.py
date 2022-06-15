@@ -32,7 +32,9 @@ path = Path.cwd() / "Standings.xlsx"
 
 def run():
     start = timeit.default_timer()
-    pass
+    
+    #codice qui i guess
+
     print(f"Execution time: {timeit.default_timer() - start}")
 
 
