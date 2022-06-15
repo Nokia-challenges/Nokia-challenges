@@ -6,3 +6,4 @@ CHALLENGE 5 - PERFORMANCE
 
 - esempio di URL corretta per chiamata API: https://www.thesportsdb.com/api/v1/json/2/lookuptable.php?l=4328&s=2021-2022
 - librerie Python suggerite: asyncio, pandas, json, requests, openpyxl
+- colonne da inserire in ogni foglio excel: rank, squadra, partite giocate, partite vinte, partite perse, partite pareggiate, gol fatti, gol subiti, differenza gol, punti
