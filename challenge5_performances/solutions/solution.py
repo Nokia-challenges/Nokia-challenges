@@ -32,8 +32,8 @@ path = Path.cwd() / "Standings.xlsx"
 
 def run():
     start = timeit.default_timer()
-    
-    #codice qui i guess
+
+    # codice qui i guess
 
     print(f"Execution time: {timeit.default_timer() - start}")
 

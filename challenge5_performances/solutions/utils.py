@@ -8,7 +8,7 @@ def compose_url(league_id: str, season: str) -> str:
     Compose URL from the given URL_BASE adding
     league_id and season as parameters
     """
-    url = URL_BASE + "?l=" + league_id + "s=" + season 
+    url = URL_BASE + "?l=" + league_id + "s=" + season
 
 
 async def get_league_data(url: str) -> pd.DataFrame:
