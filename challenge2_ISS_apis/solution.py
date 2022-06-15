@@ -16,7 +16,7 @@ def run():
 
     timedif = info2["timestamp"] - info1["timestamp"]
 
-    dist = distance.great_circle(pos1, pos2).km 
+    dist = distance.great_circle(pos1, pos2).km * 1000
 
     velocity = 3.6 * dist / timedif
     print(velocity)
