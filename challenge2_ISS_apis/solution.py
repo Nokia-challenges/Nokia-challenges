@@ -1,27 +1,27 @@
-url = "http://api.open-notify.org/iss-now.json"
+from geopy import distance
 
 import requests
 import time
-import geopy.distance
+
+url = "http://api.open-notify.org/iss-now.json"
 
 
 def run():
-    r = requests.get(url).json()
-    pos = {r["iss_position"]["latitude"], r["iss_position"]["longitude"]}
-    tempo = ["timestamp"]
-
+    info1 = requests.get(url).json()
     time.sleep(5)
+    info2 = requests.get(url).json()
 
-    r = requests.get(url).json()
-    pos2 = {r["iss_position"]["latitude"], r["iss_position"]["longitude"]}
-    tempo = {"timestamp"}
+    pos1 = (info1["iss_position"]["latitude"], info1["iss_position"]["longitude"])
+    pos2 = (info2["iss_position"]["latitude"], info2["iss_position"]["longitude"])
 
-    timediff = tempo - tempo
-    RIS = int(geopy.great_circle(pos2, pos))
+    timedif = info2["timestamp"] - info1["timestamp"]
 
-    velocita = RIS / timediff
+    dist = distance.great_circle(pos1, pos2).km 
 
-    return velocita
+    velocity = 3.6 * dist / timedif
+    print(velocity)
+
+    return velocity
 
 
 if __name__ == "__main__":
