@@ -12,7 +12,7 @@ def run():
 
     pos1 = (idk["iss_position"]["latitude"], idk["iss_position"]["longitude"])
 
-    time.sleep(36)
+ #   time.sleep(36)
 
     idk = requests.get(url).json()
 
