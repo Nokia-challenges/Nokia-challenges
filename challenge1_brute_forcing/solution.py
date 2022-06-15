@@ -11,7 +11,7 @@ def run():
         pwd = pwd[0:-1]
 
         if check_password(pwd):
-
+     
             f2.write(pwd)
             return 0
 
