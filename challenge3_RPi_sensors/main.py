@@ -58,16 +58,16 @@ def get_output(cond1):
             for char in word:
                 if char == "-":
                     GPIO.output(config.GPIO_BLUE, GPIO.HIGH)
-                    time.sleep(1.5)
+                    time.sleep(0.3)
                     GPIO.output(config.GPIO_BLUE, GPIO.LOW)
-                    time.sleep(0.5)
+                    time.sleep(0.1)
                 elif char == ".":
                     GPIO.output(config.GPIO_BLUE, GPIO.HIGH)
-                    time.sleep(0.7)
+                    time.sleep(0.1)
                     GPIO.output(config.GPIO_BLUE, GPIO.LOW)
-                    time.sleep(0.5)
+                    time.sleep(0.1)
                 else:
-                    time.sleep(1.5)
+                    time.sleep(0.3)
 
             # use green led to output blank space (word separation)
             GPIO.output(config.GPIO_GREEN, GPIO.HIGH)
