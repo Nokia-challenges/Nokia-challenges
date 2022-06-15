@@ -4,7 +4,7 @@ URL_BASE = "https://www.thesportsdb.com/api/v1/json/2/lookuptable.php"
 
 
 def compose_url(league_id: str, season: str) -> str:
-    
+
     url = URL_BASE + "?l=" + league_id + "&s=" + season
 
     pass
