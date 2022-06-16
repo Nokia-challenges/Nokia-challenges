@@ -1,8 +1,15 @@
 from pathlib import Path
 from typing import List
 import timeit
+from openpyxl import Workbook
+import requests
+from utils import compose_url
+import pandas as pd
+from openpyxl.utils.dataframe import dataframe_to_rows 
+from openpyxl import workbook
 
-from challenge5_performances.solutions.standings import League
+
+from standings import League
 
 leagues: List[League] = [
     League(id=4328, name="Premier League"),
@@ -28,12 +35,43 @@ leagues: List[League] = [
 ]
 
 path = Path.cwd() / "Standings.xlsx"
+url="https://www.thesportsdb.com/Sport/Soccer"
+
+def f1(i):
+     for i in range (20):
+        url=compose_url(str(leagues[i].id),"2021-2022")
+        r=requests.get(url)
+        r=r.json()["table"]
+        return r
+
+def f2(r):
+    mp={}
+
+    c=0
+    for item in r:
+        for item2 in item:
+            if c==0:
+                mp[item2]=list()
+            mp[item2].append(item[item2])
+        c=c+1
+    return mp
 
 
 def run():
     start = timeit.default_timer()
-    pass
     print(f"Execution time: {timeit.default_timer() - start}")
+    wb=Workbook()
+    for i in range(20):
+        df=pd.DataFrame(f2(f1(i)))
+       # wb.active()
+        ws=wb.create_sheet(str(i))
+
+        for i in dataframe_to_rows(df,index=True, header=True):
+            ws.append(i)
+        wb.save("pandas_openpyxl.xlsx")
+
+
+    
 
 
 if __name__ == "__main__":
