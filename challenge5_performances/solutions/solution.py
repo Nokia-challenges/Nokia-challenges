@@ -40,26 +40,21 @@ leagues: List[League] = [
 SEASON = "2021-2022"
 
 
-path = Path.cwd() / "solutions/Standings.xlsx"
+path = Path.cwd() / "Standings.xlsx"
 
 
 async def run():
     start = timeit.default_timer()
 
-    urls = []
-
-    for league in leagues:
-        urls.append(compose_url(league.id, SEASON))
-
-    dataframes = await asyncio.gather(*(get_league_data(url, start) for url in urls))
+    dataframes = await asyncio.gather(
+        *(get_league_data(compose_url(league.id, SEASON)) for league in leagues)
+    )
 
     with pd.ExcelWriter(path) as writer:
 
         for i in range(len(leagues)):
 
             giorgio = dataframes[i]
-
-            #    print(giorgio)
 
             giorgio.to_excel(writer, sheet_name=leagues[i].name)
 
