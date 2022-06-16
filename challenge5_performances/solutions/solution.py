@@ -10,7 +10,7 @@ import openpyxl as xls
 import asyncio
 
 
-from standings import League
+from challenge5_performances.solutions.standings import League
 from utils import *
 
 leagues: List[League] = [
