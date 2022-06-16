@@ -40,7 +40,7 @@ leagues: List[League] = [
 SEASON = "2021-2022"
 
 
-path = Path.cwd() / "Standings.xlsx"
+path = Path.cwd() / "solutions/Standings.xlsx"
 
 
 async def run():
