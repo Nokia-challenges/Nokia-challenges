@@ -11,7 +11,7 @@ import asyncio
 
 
 from challenge5_performances.solutions.standings import League
-from utils import *
+from challenge5_performances.solutions.utils import *
 
 leagues: List[League] = [
     League(id=4328, name="Premier League"),
