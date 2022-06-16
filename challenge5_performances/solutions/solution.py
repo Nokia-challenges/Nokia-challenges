@@ -2,7 +2,16 @@ from pathlib import Path
 from typing import List
 import timeit
 
-from challenge5_performances.solutions.standings import League
+import pandas as pd
+
+import openpyxl as xls
+
+
+import asyncio
+
+
+from standings import League
+from utils import *
 
 leagues: List[League] = [
     League(id=4328, name="Premier League"),
@@ -27,14 +36,42 @@ leagues: List[League] = [
     League(id=4356, name="Australian A League"),
 ]
 
+
+SEASON = "2021-2022"
+
+
 path = Path.cwd() / "Standings.xlsx"
 
 
-def run():
+async def run():
     start = timeit.default_timer()
-    pass
+
+    urls = []
+
+    for league in leagues:
+        urls.append(compose_url(league.id, SEASON))
+
+    dataframes = await asyncio.gather(*(get_league_data(url, start) for url in urls))
+
+    with pd.ExcelWriter(path) as writer:
+
+        for i in range(len(leagues)):
+
+            giorgio = dataframes[i]
+
+            #    print(giorgio)
+
+            giorgio.to_excel(writer, sheet_name=leagues[i].name)
+
+    xls_file = xls.load_workbook(path)
+
+    for antonio in xls_file:
+        antonio.delete_cols(idx=1, amount=1)
+
+    xls_file.save(path)
+
     print(f"Execution time: {timeit.default_timer() - start}")
 
 
 if __name__ == "__main__":
-    run()
+    asyncio.run(run())

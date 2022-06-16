@@ -2,7 +2,7 @@ from dataclasses import dataclass
 import os
 from typing import List, Union
 
-from challenge5_performances.solutions.report import Report
+from report import Report
 
 SEASON = "2021-2022"
 

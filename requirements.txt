@@ -5,3 +5,5 @@ black
 flake8
 pandas
 openpyxl
+
+requests-async
