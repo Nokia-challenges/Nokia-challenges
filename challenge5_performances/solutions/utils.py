@@ -1,4 +1,7 @@
 import pandas as pd
+import asyncio
+import requests
+
 
 URL_BASE = "https://www.thesportsdb.com/api/v1/json/2/lookuptable.php"
 
@@ -6,14 +9,14 @@ URL_BASE = "https://www.thesportsdb.com/api/v1/json/2/lookuptable.php"
 def compose_url(league_id: str, season: str) -> str:
 
     url = URL_BASE + "?l=" + league_id + "&s=" + season
-    pass
+    return url
 
 
 async def get_league_data(url: str) -> pd.DataFrame:
     """
     Get league data asynchronously and return as a pandas dataframe
     """
-
+   
     pass
 
 

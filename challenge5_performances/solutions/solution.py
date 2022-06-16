@@ -45,8 +45,8 @@ def f1(i):
         return r
 
 def f2(r):
+     
     mp={}
-
     c=0
     for item in r:
         for item2 in item:
