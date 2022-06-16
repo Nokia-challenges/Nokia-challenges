@@ -38,4 +38,4 @@ jobs:
     - name: Test challenge 5
       if: always()
       run: |
-        python -m challenge5_performances.test.verify_submissions.py
+        python -m challenge5_performances.test.verify_submissions

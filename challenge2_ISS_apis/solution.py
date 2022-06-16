@@ -12,15 +12,15 @@ def run():
 
     pos1 = (idk["iss_position"]["latitude"], idk["iss_position"]["longitude"])
 
-    time.sleep(36)
+    time.sleep(4)
 
     idk = requests.get(url).json()
 
     pos2 = (idk["iss_position"]["latitude"], idk["iss_position"]["longitude"])
 
-    ris = int(100 * gp.great_circle(pos2, pos1).kilometers)
+    ris = int(1000 * gp.great_circle(pos2, pos1).kilometers)
 
-    #    print(ris)
+    print(ris)
     return ris
 
 
