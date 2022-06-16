@@ -1,4 +1,3 @@
-from matplotlib.pyplot import table
 import pandas as pd
 import requests_async
 
