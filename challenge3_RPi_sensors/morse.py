@@ -44,6 +44,7 @@ MORSE_CODE_DICT = {
     ")": "-.--.-",
 }
 
+
 # method to encrypt the message (from italian to morse)
 def encrypt_morse(message):
     message = message.upper()
