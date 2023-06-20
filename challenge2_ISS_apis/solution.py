@@ -32,7 +32,7 @@ def run():
 
     distance = haversine_distance(coordinates1, coordinates2)
     # print(distance/(end-start)*3600)
-    print(distance*3600)
+    return distance*3600
 
 
 if __name__ == "__main__":
