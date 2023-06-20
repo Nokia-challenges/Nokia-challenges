@@ -2,7 +2,7 @@ import json, requests, time
 from geopy.distance import geodesic as GD
 
 url = "http://api.open-notify.org/iss-now.json"
-
+#BRO DI ZONAAAd
 
 def run():
     response = requests.get(url)
