@@ -44,7 +44,6 @@ MORSE_CODE_DICT = {
     ")": "-.--.-",
 }
 
-
 # method to encrypt the message (from italian to morse)
 def encrypt_morse(message):
     message = message.upper()
@@ -54,7 +53,9 @@ def encrypt_morse(message):
             # 2 blank spaces to separate words
             morse_code += "  "
         else:
-            morse_code += (
-                MORSE_CODE_DICT[char] + " "
-            )  # char are separated by a single blank space
+            if char in MORSE_CODE_DICT:
+                morse_code += (
+                    MORSE_CODE_DICT.get(char) + " "
+                )  # char are separated by a single blank space
     return morse_code
+
