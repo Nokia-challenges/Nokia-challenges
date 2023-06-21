@@ -11,7 +11,6 @@ def run():
             riga = parola.decode()
             riga = riga.rstrip()
             if check_password(riga) == True:
-                print(riga)
                 file_uno = open("passphrase.txt", "w")
                 file_uno.write(riga)
                 file_uno.close()
