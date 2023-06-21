@@ -7,13 +7,12 @@ from morse import encrypt_morse
 config = Configuration()
 
 
-def read_sensors(cond1):
+def read_sensors():
     # initialize variables
     cond_latency = False
     cond_pir = False
 
     while True:
-        cond1.acquire()
 
         # begin trigger pulse
         GPIO.output(config.GPIO_TRIG, GPIO.HIGH)
@@ -38,52 +37,45 @@ def read_sensors(cond1):
         print(f"Trigger: {cond_pir}")
 
         if cond_latency and cond_pir:
-            cond1.notifyAll()
-            cond1.release()
-            cond1.wait()
+            t2 = threading.Thread(target=get_output, args=())
+            t2.start()
+            time.sleep(0.5)
+            t2.join()
         time.sleep(3)
 
 
-def get_output(cond1):
-    while True:
-        cond1.acquire()
-        cond1.wait()
-        with open("passphrase.txt", "r") as data_file:
-            morse_code = encrypt_morse(data_file.read())
+def get_output():
+    with open("passphrase.txt", "r") as data_file:
+        morse_code = encrypt_morse(data_file.read())
 
-        words = morse_code.split("  ")
-        print(words)
-        for word in words:
-            # use blue led to output morse symbol
-            for char in word:
-                if char == "-":
-                    GPIO.output(config.GPIO_BLUE, GPIO.HIGH)
-                    time.sleep(0.3)
-                    GPIO.output(config.GPIO_BLUE, GPIO.LOW)
-                    time.sleep(0.1)
-                elif char == ".":
-                    GPIO.output(config.GPIO_BLUE, GPIO.HIGH)
-                    time.sleep(0.1)
-                    GPIO.output(config.GPIO_BLUE, GPIO.LOW)
-                    time.sleep(0.1)
-                else:
-                    time.sleep(0.3)
+    words = morse_code.split("  ")
+    print(words)
+    for word in words:
+        # use blue led to output morse symbol
+        for char in word:
+            if char == "-":
+                GPIO.output(config.GPIO_BLUE, GPIO.HIGH)
+                time.sleep(0.3)
+                GPIO.output(config.GPIO_BLUE, GPIO.LOW)
+                time.sleep(0.1)
+            elif char == ".":
+                GPIO.output(config.GPIO_BLUE, GPIO.HIGH)
+                time.sleep(0.1)
+                GPIO.output(config.GPIO_BLUE, GPIO.LOW)
+                time.sleep(0.1)
+            else:
+                time.sleep(0.3)
 
-            # use green led to output blank space (word separation)
-            GPIO.output(config.GPIO_GREEN, GPIO.HIGH)
-            time.sleep(1)
-            GPIO.output(config.GPIO_GREEN, GPIO.LOW)
-
-            cond1.notifyAll()
-            cond1.release()
+        # use green led to output blank space (word separation)
+        GPIO.output(config.GPIO_GREEN, GPIO.HIGH)
+        time.sleep(1)
+        GPIO.output(config.GPIO_GREEN, GPIO.LOW)
 
 
 if __name__ == "__main__":
     # condition variable to sync threads
     cond1 = threading.Condition()
 
-    t1 = threading.Thread(target=read_sensors, args=(cond1,))
-    t2 = threading.Thread(target=get_output, args=(cond1,))
+    t1 = threading.Thread(target=read_sensors, args=())
 
-    t2.start()
     t1.start()
