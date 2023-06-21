@@ -13,5 +13,6 @@ if __name__ == "__main__":
     assert len(passphrase) > 0, "Empty passphrase"
     assert (
         hashlib.sha256(passphrase.encode("utf-8")).hexdigest()
-        == "fb68cc8c2401d4939d3b1f1a66d713f8b78e89f99a3837e340af289db3f1402b"
+        == 'dfe94209aa98b895a98cf0f1da1dc73b026c59318cee3a4cbe81f62096c93c2c'
     ), f"incorrect passphrase: {passphrase}"
+
