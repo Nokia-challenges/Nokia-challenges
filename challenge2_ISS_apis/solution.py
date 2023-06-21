@@ -18,7 +18,6 @@ def run():
     pos2 = (lat2, lon2)
     dist = distance.distance(pos1, pos2).km
     vel = dist * 600
-    print(vel)
 
     return vel
 
