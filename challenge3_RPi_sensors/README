@@ -1,7 +1,7 @@
 CHALLENGE 3 - Reverse engineering con Raspberry e sensori fisici
 
-Questa challenge mira a fare reverse engineering di un programma che gestisce sensori fisici tramite Raspberry Pi. L'obiettivo è capire il funzionamento 
-del software tramite il codice e verificare le condizioni fisiche richieste.
+Questa challenge mira a fare reverse engineering di un programma che gestisce sensori fisici tramite Raspberry Pi.
+L'obiettivo è capire il funzionamento del software tramite il codice e verificare le condizioni fisiche richieste.
 
 - come nella challenge 1, lo scopo di questa challenge é inserire nel file passphrase.txt la password corretta
 - per superare la challenge il file passphrase.txt va committato e pushato e viene validato automaticamente
