@@ -24,16 +24,5 @@ def run():
     speed = (dist/5)*3600
     return speed
 
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
     run()
