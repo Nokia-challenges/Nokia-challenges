@@ -35,4 +35,4 @@ jobs:
     - name: Test challenge 4
       if: always()
       run: |
-        python challenge4_palindromes/test/verify_submissions.py
+        python -m challenge4_palindromes.test.verify_submissions
