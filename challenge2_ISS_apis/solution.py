@@ -23,7 +23,7 @@ def run():
     dist = distance.distance(p1,p2).km
 
     v = dist/(t/3600)
-    print(v)
+    return(v)
     pass
 
 
