@@ -10,7 +10,7 @@ def run(s):
                 if len(parola)>=lenmax:
                     palindroma=parola
                     lenmax=len(parola)
-    print(palindroma)
+    return palindroma
 
 
 
