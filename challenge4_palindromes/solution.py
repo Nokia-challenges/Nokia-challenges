@@ -9,11 +9,11 @@ def run(s):
             parola=parola+s[j]
             if parola==parola[::-1]:
                 if len(parola)>lenmax:
-                    palindroma=parola
+                    pal=parola
                     lenmax=len(parola)
 
 
-    return(palindroma)
+    return(pal)
 
 
 if __name__ == "__main__":
