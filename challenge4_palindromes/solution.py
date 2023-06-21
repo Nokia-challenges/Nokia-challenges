@@ -28,9 +28,9 @@ def run(s):
 
 
     if len(palindroma1)>len(palindroma2):
-        print(palindroma1)
+        return palindroma1
     elif len(palindroma2)>len(palindroma1):
-        print(palindroma2)
+        return palindroma2
 
 
 if __name__ == "__main__":
